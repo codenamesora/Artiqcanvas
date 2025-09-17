@@ -1,0 +1,60 @@
+/* style.css - ArtiqCanvas */
+:root{
+  --bg:#0f0f12;--card:#111;--accent:#f6c26b;--muted:#bdbdbd;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#eee;background:linear-gradient(180deg,#071025 0%, #0f0f12 100%);min-height:100vh;display:flex;flex-direction:column;}
+.site-header{display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem;background:transparent;position:sticky;top:0;z-index:40}
+.brand .logo{font-weight:700;font-size:1.2rem;letter-spacing:0.6px}
+.brand .logo span{color:var(--accent)}
+.nav{display:flex;gap:1rem;align-items:center}
+.menu{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+.menu a{color:#ddd;text-decoration:none}
+.menu-btn{display:none}
+.cart-btn{background:var(--accent);border:none;padding:.5rem 1rem;border-radius:8px;cursor:pointer}
+
+/* Hero */
+.hero{padding:2rem;display:flex;gap:2rem;align-items:center;position:relative;overflow:hidden}
+.slideshow{display:flex;gap:1rem;align-items:center}
+.slide{width:320px;min-width:320px;padding:1rem;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 6px 18px rgba(0,0,0,0.6);position:relative;transform-origin:center;transition:transform .35s}
+.slide img{width:100%;height:220px;object-fit:cover;border-radius:8px;display:block;transition:transform .35s,box-shadow .25s}
+.slide:hover img{transform:scale(1.03);box-shadow:0 14px 34px rgba(0,0,0,0.6)}
+.slide figcaption{margin-top:.6rem;font-size:.95rem;color:var(--muted)}
+.add-cart{margin-top:.6rem;background:transparent;border:2px solid var(--accent);color:var(--accent);padding:.4rem .8rem;border-radius:8px;cursor:pointer;transition:all .18s}
+.add-cart:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(246,194,107,0.12)}
+/* flora */
+.flora-anim .leaf{position:absolute;border-radius:50%;opacity:.14}
+.leaf-1{width:220px;height:220px;background:radial-gradient(circle at 30% 30%, rgba(120,200,120,.18), transparent);left:-60px;top:40%}
+.leaf-2{width:160px;height:160px;background:radial-gradient(circle at 70% 70%, rgba(120,200,190,.14), transparent);right:-40px;top:10%}
+
+/* gallery */
+.gallery{padding:2rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.artcard{background:var(--glass);padding:1rem;border-radius:12px;display:flex;gap:.8rem;align-items:center;transition:transform .25s}
+.artcard img{width:100px;height:70px;object-fit:cover;border-radius:6px;transition:transform .28s,box-shadow .25s}
+.artcard:hover{transform:translateY(-6px)}
+.artcard:hover img{transform:scale(1.07);box-shadow:0 12px 28px rgba(0,0,0,0.6)}
+.meta h3{margin:0;font-size:1rem}
+.price{color:var(--muted);margin:.3rem 0}
+
+/* cart sidebar */
+.cart-sidebar{position:fixed;right:-420px;top:0;width:360px;height:100%;background:linear-gradient(180deg,#0b0b0d, #111111);box-shadow:-20px 0 60px rgba(0,0,0,0.6);padding:1rem;transition:right .4s;z-index:60}
+.cart-sidebar.open{right:0}
+.cart-head{display:flex;justify-content:space-between;align-items:center}
+.cart-items{margin-top:1rem;overflow:auto;max-height:60vh}
+.cart-item{display:flex;justify-content:space-between;align-items:center;padding:.6rem 0;border-bottom:1px dashed rgba(255,255,255,0.03)}
+.checkout{width:100%;padding:.8rem;border:none;border-radius:10px;background:linear-gradient(90deg,#f6c26b,#ff9f6b);cursor:pointer;box-shadow:0 8px 20px rgba(246,194,107,0.16);transition:box-shadow .2s,transform .12s}
+.checkout:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(246,194,107,0.24)}
+.checkout.glow:hover{box-shadow:0 0 28px rgba(246,194,107,0.6),0 10px 40px rgba(255,159,107,0.15)}
+
+/* footer */
+.site-footer{padding:1.6rem 2rem;background:transparent;border-top:1px solid rgba(255,255,255,0.02);margin-top:auto}
+@media (max-width:720px){
+  .menu{display:none}
+  .menu-btn{display:inline-block}
+  .slideshow{overflow:auto;padding-bottom:1rem}
+  .slide{min-width:260px}
+  .cart-sidebar{width:100%;right:-100%}
+  .cart-sidebar.open{right:0}
+}

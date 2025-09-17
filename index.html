@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Artiq Canvas</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- GSAP CDN for animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="logo">Artiq <span>Canvas</span></div>
+    </div>
+    <nav class="nav">
+      <button class="menu-btn" id="menuBtn">Menu</button>
+      <ul class="menu" id="menu">
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="cartToggle" class="cart-btn">Cart (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="slideshow" id="slideshow">
+        <!-- slides -->
+        <figure class="slide">
+          <img src="assets/images/van-gogh.svg" alt="Van Gogh - placeholder">
+          <figcaption>Van Gogh — Starry Placeholder</figcaption>
+          <button class="add-cart" data-title="Van Gogh — Starry Placeholder" data-price="120">Add to Cart</button>
+        </figure>
+        <figure class="slide">
+          <img src="assets/images/monet.svg" alt="Monet - placeholder">
+          <figcaption>Monet — Water Lily Placeholder</figcaption>
+          <button class="add-cart" data-title="Monet — Water Lily Placeholder" data-price="150">Add to Cart</button>
+        </figure>
+      </div>
+
+      <div class="flora-anim">
+        <div class="leaf leaf-1"></div>
+        <div class="leaf leaf-2"></div>
+      </div>
+
+      <div class="music-control">
+        <audio id="bgMusic" loop>
+          <source src="assets/music/background.wav" />
+          Your browser does not support audio element.
+        </audio>
+        <button id="muteBtn">Mute</button>
+      </div>
+    </section>
+
+    <section id="gallery" class="gallery">
+      <h2>Gallery</h2>
+      <div class="grid">
+        <!-- repeat artworks -->
+        <article class="artcard">
+          <img src="assets/images/van-gogh.svg" alt="">
+          <div class="meta">
+            <h3>Van Gogh — Starry Placeholder</h3>
+            <p class="price">Rp120.000</p>
+            <button class="add-cart" data-title="Van Gogh — Starry Placeholder" data-price="120">Add to Cart</button>
+          </div>
+        </article>
+
+        <article class="artcard">
+          <img src="assets/images/monet.svg" alt="">
+          <div class="meta">
+            <h3>Monet — Water Lily Placeholder</h3>
+            <p class="price">Rp150.000</p>
+            <button class="add-cart" data-title="Monet — Water Lily Placeholder" data-price="150">Add to Cart</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <aside id="cartSidebar" class="cart-sidebar">
+      <div class="cart-head">
+        <h3>Your Cart</h3>
+        <button id="closeCart">Close</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="total">Total: <span id="cartTotal">Rp0</span></div>
+        <button id="checkout" class="checkout">Checkout</button>
+      </div>
+    </aside>
+
+    <section id="about" class="about">
+      <h2>About Artiq Canvas</h2>
+      <p>Template demo—ganti gambar dengan karya asli Anda. Situs ini responsif, ringan, dan siap di-deploy ke GitHub Pages.</p>
+    </section>
+  </main>
+
+  <footer id="contact" class="site-footer">
+    <div class="contact">
+      <p>Contact: hello@artiqcanvas.example</p>
+      <div class="socials">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Twitter">TW</a>
+      </div>
+    </div>
+    <p class="copyright">© Artiq Canvas • Placeholder assets — replace with originals you own or public-domain images.</p>
+  </footer>
+</body>
+</html>
